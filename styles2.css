@@ -184,7 +184,7 @@ p {
 	.container {
 		width: 100%;
 		display: flex;
-		flex-direction: collumn;
+		flex-direction: column;
 	}
 	.option {
 		width: 80%
