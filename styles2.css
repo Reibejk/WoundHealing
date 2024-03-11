@@ -1,11 +1,18 @@
 * {
 	box-sizing: border-box;
+	position: relative;
+}
+
+body {
+	display: flex;
+	position: relative;
 }
 
 .option {
 	margin-left: 20px;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	position: absolute;
 	color: whitesmoke;
 	z-index: 2;
@@ -15,7 +22,16 @@
 
 .option > div {
 	background-color: transparent;
-	width: 200px;
+	width: 300px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+.option > div:nth-child(3), .option > div:nth-child(4) {
+	display: flex;
+	justify-content: flex-start;
+	background-color: transparent;
+	width: 150px;
 	margin-bottom: 10px;
 	margin-left: 5px;
 }
@@ -36,7 +52,7 @@ input[type="range"] {
 	float: right;
 	font-size: 16px;
 	z-index: 1;
-	left: 70px;
+	left: 50px;
 	margin: 0;
 }
 
@@ -52,12 +68,21 @@ button {
 	margin: 5px;
 }
 
-button:nth-child(0), button:nth-child(1) {
 
+
+button:nth-child(0), button:nth-child(1) {
+	align-self: center;
 }
 
+#up, #down, #left, #right #nextS {
+	display: flex;
+	align-self: center;
+	flex-direction: row;
+}
+
+
 button:nth-child(2), button:nth-child(3) {
-	fl
+
 }
 
 button:hover {
@@ -83,11 +108,32 @@ button:hover {
 	background-color: black;
 }
 
-.image {
-	display: block;
+#containerTwo {
+	position: relative;
+	height: 900px;
+	float: left;
+	display: flex;
+	overflow: hidden;
+	border: 5px solid white;
+	padding: 5px;
+	z-index: 1;
+	background-color: black;
+}
+
+#imageSlide {
+	
+}
+
+#image {
+	position: relative;
+	display: flex;
 	width: 100%;
 	height: auto;
 	rotate: 0;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0;
 }
 
 #imageOverLay {
@@ -118,15 +164,19 @@ p {
 
 #change {
 	position: absolute;
-	display: block;
+	display: flex;
 	color: black;
 	z-index: 2;
 	width: 100px;
 	margin-top: 5px;
 }
 
-img:hover {
+.image:hover {
 	transform: scale(1.5);
+}
+
+#imgSlide {
+	position: relative;
 }
 
 
@@ -137,6 +187,6 @@ img:hover {
 	}
 	.option {
 		width: 80%
-		align-items: flex-end;
+		bottom: 20px;
 	}
 }
