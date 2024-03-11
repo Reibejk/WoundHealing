@@ -183,8 +183,8 @@ p {
 @media screen and (max-width: 480px) {
 	.container {
 		width: 100%;
-		height: 50%;
-		margin-top: 20px;
+		display: flex;
+		flex-direction: collumn;
 	}
 	.option {
 		width: 80%
