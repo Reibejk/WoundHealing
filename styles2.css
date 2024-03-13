@@ -1,37 +1,25 @@
 * {
 	box-sizing: border-box;
-	position: relative;
 }
 
 body {
-	display: flex;
-	position: relative;
+	display: grid;
+	grid-template-columns: 2;
 }
 
 .option {
 	margin-left: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 4;
 	position: absolute;
 	color: whitesmoke;
 	z-index: 2;
-	bottom: 50px;
-	border-radius: 20px;
+	bottom: 20px;
 }
 
 .option > div {
 	background-color: transparent;
-	width: 300px;
-	margin-bottom: 10px;
-	margin-left: 5px;
-}
-
-.option > div:nth-child(3), .option > div:nth-child(4) {
-	display: flex;
-	justify-content: flex-start;
-	background-color: transparent;
-	width: 150px;
+	width: 80%;
 	margin-bottom: 10px;
 	margin-left: 5px;
 }
@@ -52,7 +40,7 @@ input[type="range"] {
 	float: right;
 	font-size: 16px;
 	z-index: 1;
-	left: 50px;
+	left: 0px;
 	margin: 0;
 }
 
@@ -75,9 +63,8 @@ button:nth-child(0), button:nth-child(1) {
 }
 
 #up, #down, #left, #right {
-	display: flex;
+	display: inline-grid;
 	align-self: center;
-	flex-direction: row;
 }
 
 
@@ -99,7 +86,7 @@ button:hover {
 .container {
 	position: relative;
 	height: 900px;
-	/*float: left;*/
+	float: left;
 	display: flex;
 	overflow: hidden;
 	border: 5px solid white;
@@ -149,6 +136,10 @@ p {
 	width: 100px;
 	margin-top: 5px;
 }
+
+/*.image:hover {
+	transform: scale(1.5);
+}*/
 
 #imgSlide {
 	position: relative;
