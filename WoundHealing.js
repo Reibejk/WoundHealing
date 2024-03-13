@@ -1,27 +1,18 @@
-document.getElementById("degree").addEventListener("change", function(e) {
-	const degree = e.target.value;
-	rotateImage(degree);
-})
-
-function rotateImage(degree) {
-	const image = document.getElementById("image");
-	image.style.transform = 'rotate(' + degree + 'deg)';
-	document.querySelector("#ang").innerHTML = "Degree: ".concat(degree);
-}
+const img = document.getElementById("image");
+const imgSlide = document.querySelector("#imageSlide");
 
 
 
-const image = document.querySelector("#image");
-
-
-opacity.addEventListener("change", changeOpacity);
 
 function changeOpacity() {
-	image.style.opacity = (document.querySelector("#opacity").value)/100;
+	img.style.opacity = (document.querySelector("#opacity").value)/100;
 	document.querySelector("#opac").innerHTML = (document.querySelector("#opacity").value)/100;
 }
 
-
+function changeScale() {
+	img.style.scale = (document.querySelector("#scale").value)/100;
+	document.querySelector("#scal").innerHTML = (document.querySelector("#scale").value)/100;
+}
 
 function mergeImage() {
 	document.querySelector("#imageOverLay").style.visibility = "visible";
@@ -30,8 +21,6 @@ function mergeImage() {
 function unmergeImage() {
 	document.querySelector("#imageOverLay").style.visibility = "hidden";
 }
-
-const img = document.getElementById("image");
 
 let imageArray = [
 	"./WoundRepair/P19b/P19b_110124.jpg",  
@@ -44,10 +33,11 @@ let imageArray = [
 	"./WoundRepair/P19b/P19b_150224.jpg",
 	"./WoundRepair/P19b/P19b_200224.jpg",
 	"./WoundRepair/P19b/P19b_260224.jpg",
+	"./WoundRepair/P19b/P19b_290224.jpg",
+	"./WoundRepair/P19b/P19b_040324.jpg",
+	"./WoundRepair/P19b/P19b_070324.jpg",
+	"./WoundRepair/P19b/P19b_110324.jpg",
 	];
-
-
-
 
 let imageIndex = 0;
 
@@ -61,9 +51,7 @@ function previousImage() {
 		img.setAttribute("src", imageArray[0]);
 		document.querySelector("#name").innerHTML = imageArray[0].substring(19);
 		imageIndex = imageArray.length;
-	}
-	
-	
+	}	
 }
 
 function nextImage() {
@@ -83,27 +71,58 @@ let upPic = 0;
 
 function up() {
 	upPic -= 1;
-	image.style.top = (document.querySelector("#up").value + upPic).concat("px");
+	img.style.top = (document.querySelector("#up").value + upPic).concat("px");
+}
+
+function upD() {
+	upPic -= 10;
+	img.style.top = (document.querySelector("#up").value + upPic).concat("px");
 }
 
 function down() {
 	upPic += 1;
-	image.style.top = (document.querySelector("#down").value + upPic).concat("px");
+	img.style.top = (document.querySelector("#down").value + upPic).concat("px");
+}
+function downD() {
+	upPic += 10;
+	img.style.top = (document.querySelector("#down").value + upPic).concat("px");
 }
 
 let leftPic = 0;
 
 function right() {
 	leftPic += 1;
-	image.style.left = (document.querySelector("#left").value + leftPic).concat("px");
+	img.style.left = (document.querySelector("#left").value + leftPic).concat("px");
+}
+
+function rightD() {
+	leftPic += 10;
+	img.style.left = (document.querySelector("#left").value + leftPic).concat("px");
 }
 
 function left() {
 	leftPic -= 1;
-	image.style.left = (document.querySelector("#right").value + leftPic).concat("px");
+	img.style.left = (document.querySelector("#right").value + leftPic).concat("px");
+}
+
+function leftD() {
+	leftPic -= 10;
+	img.style.left = (document.querySelector("#right").value + leftPic).concat("px");
+}
+
+document.getElementById("degree").addEventListener("change", function(e) {
+	const degree = e.target.value;
+	rotateImage(degree);
+})
+
+function rotateImage(degree) {
+	const img = document.getElementById("image");
+	img.style.transform = 'rotate(' + degree + 'deg)';
+	document.querySelector("#ang").innerHTML = "Degree: ".concat(degree);
 }
 
 let slideIndex = 0;
+let count = 0;
 
 let imageObjectArray = [
 	{src: "./WoundRepair/P19b/P19b_110124.jpg", rotate: "0deg", top: "19px", left: "12px"},  
@@ -118,13 +137,23 @@ let imageObjectArray = [
 	{src: "./WoundRepair/P19b/P19b_260224.jpg", rotate: "-176deg", top: "-56px", left: "-1px"},
 	];
 
+let imageObjectArray2 = [
+	{src: "./WoundRepair/P19b/P19b_110124.jpg", rotate: "0deg", top: "-5px", left: "5px", scale: "1.02"},  
+	{src: "./WoundRepair/P19b/P19b_180124.jpg", rotate: "23deg", top: "-15px", left: "-8px", scale: "0.96"}, 
+	{src: "./WoundRepair/P19b/P19b_220124.jpg", rotate: "5deg", top: "-3px", left: "-12px", scale: "0.99"}, 
+	{src: "./WoundRepair/P19b/P19b_250124.jpg", rotate: "5deg", top: "55px", left: "31px"}, 
+	{src: "./WoundRepair/P19b/P19b_290124.jpg", rotate: "-3deg", top: "34px", left: "19px"}, 
+	{src: "./WoundRepair/P19b/P19b_050224.jpg", rotate: "13deg", top: "116px", left: "-23px"},
+	{src: "./WoundRepair/P19b/P19b_070224.jpg", rotate: "0deg", top: "66px", left: "7px"},
+	{src: "./WoundRepair/P19b/P19b_150224.jpg", rotate: "7deg", top: "101px", left: "18px"},
+	{src: "./WoundRepair/P19b/P19b_200224.jpg", rotate: "15deg", top: "94px", left: "-1px"},
+	{src: "./WoundRepair/P19b/P19b_260224.jpg", rotate: "-176deg", top: "-56px", left: "-1px"},
+	];
 
-
-
-const imgSlide = document.querySelector("#imageSlide");
 
 function imageSlide() {
 	slideIndex = (slideIndex + 1);
+	count = 0;
 	if (slideIndex < imageObjectArray.length) {
 		imageObjectArray.forEach((dataLine, index) => {
 			imgSlide.setAttribute("src", dataLine.src);
@@ -133,7 +162,6 @@ function imageSlide() {
 			imgSlide.style.top = imageObjectArray[slideIndex].top;
 			imgSlide.style.left = imageObjectArray[slideIndex].left;
 		});
-		
 		document.querySelector("#nameS").innerHTML = imageObjectArray[slideIndex].src.substring(19);
 	} else {
 		imgSlide.setAttribute("src", imageObjectArray[0].src);
@@ -145,16 +173,28 @@ function imageSlide() {
 	}
 }
 
+/*function stopImageSlide() {
+	if (slideImage) {
 
+	}
+}*/
+
+document.querySelector("#scale").addEventListener("change", changeScale);
+opacity.addEventListener("change", changeOpacity);
 document.querySelector("#merge").addEventListener("click", mergeImage);
 document.querySelector("#unmerge").addEventListener("click", unmergeImage);
 document.querySelector("#previous").addEventListener("click", previousImage);
 document.querySelector("#next").addEventListener("click", nextImage);
 document.querySelector("#up").addEventListener("click", up);
+document.querySelector("#up").addEventListener("dblclick", upD);
 document.querySelector("#down").addEventListener("click", down);
+document.querySelector("#down").addEventListener("dblclick", downD);
 document.querySelector("#left").addEventListener("click", left);
+document.querySelector("#left").addEventListener("dblclick", leftD);
 document.querySelector("#right").addEventListener("click", right);
-document.querySelector("#containerTwo").addEventListener("mousedown", imageSlide);
+document.querySelector("#right").addEventListener("dblclick", rightD);
+document.querySelector("#imageSlide").addEventListener("click", imageSlide);
+
 
 /*setInterval(imageSlide, 1000);
 
