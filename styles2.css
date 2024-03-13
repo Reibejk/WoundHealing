@@ -47,7 +47,7 @@ input[type="range"] {
 	position: absolute;
 }
 
-#opac, #ang {
+#opac, #ang, #scal {
 	position: relative;
 	float: right;
 	font-size: 16px;
@@ -74,7 +74,7 @@ button:nth-child(0), button:nth-child(1) {
 	align-self: center;
 }
 
-#up, #down, #left, #right #nextS {
+#up, #down, #left, #right {
 	display: flex;
 	align-self: center;
 	flex-direction: row;
@@ -99,7 +99,7 @@ button:hover {
 .container {
 	position: relative;
 	height: 900px;
-	float: left;
+	/*float: left;*/
 	display: flex;
 	overflow: hidden;
 	border: 5px solid white;
@@ -120,38 +120,17 @@ button:hover {
 	background-color: black;
 }
 
-#imageSlide {
-	
-}
-
-#image {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: auto;
-	rotate: 0;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0;
-}
-
 #imageOverLay {
 	position: absolute;
-	bottom: 0;
-	/*background: rgb(200, 200, 0);
-	background: rgba(0, 0, 0, 0.5);*/
 	width: 100%;
 	transition: 1s ease;
 	opacity: 0.6;
-	margin-top: 0px;
-	text-align: center;
-	top: 10px;
+	bottom: 0;
+
 	visibility: hidden;
 }
 
 p {
-	display: flex;
 	position: absolute;
 	background-color: none;
 	color: white;
@@ -171,23 +150,20 @@ p {
 	margin-top: 5px;
 }
 
-.image:hover {
-	transform: scale(1.5);
-}
-
 #imgSlide {
 	position: relative;
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
+	body {
+		display: flex;
+		flex-direction: column;
+	}
 	.container {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-	}
-	.option {
-		width: 80%
-		bottom: 20px;
+		margin-bottom: 50px;
 	}
 }
