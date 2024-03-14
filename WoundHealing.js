@@ -46,10 +46,10 @@ function previousImage() {
 	if (imageIndex > 0) {
 		img.setAttribute("src", imageArray[imageIndex]);
 		
-		document.querySelector("#name").innerHTML = imageArray[imageIndex].substring(19);
+		document.querySelector("#name").innerHTML = ("Date: ").concat(imageArray[imageIndex].substring(24, 30));
 	} else { 
 		img.setAttribute("src", imageArray[0]);
-		document.querySelector("#name").innerHTML = imageArray[0].substring(19);
+		document.querySelector("#name").innerHTML = ("Date: ").concat(imageArray[0].substring(24, 30));
 		imageIndex = imageArray.length;
 	}	
 }
@@ -59,10 +59,10 @@ function nextImage() {
 	if (imageIndex < imageArray.length) {
 		img.setAttribute("src", imageArray[imageIndex]);
 		/* % imageArray.length*/
-		document.querySelector("#name").innerHTML = imageArray[imageIndex].substring(19);
+		document.querySelector("#name").innerHTML = ("Date: ").concat(imageArray[imageIndex].substring(24, 30));
 	} else {
 		img.setAttribute("src", imageArray[0]);
-		document.querySelector("#name").innerHTML = imageArray[0].substring(19);
+		document.querySelector("#name").innerHTML = ("Date: ").concat(imageArray[0].substring(24, 30));
 		imageIndex = 0;
 	}
 }
@@ -162,13 +162,13 @@ function imageSlide() {
 			imgSlide.style.top = imageObjectArray[slideIndex].top;
 			imgSlide.style.left = imageObjectArray[slideIndex].left;
 		});
-		document.querySelector("#nameS").innerHTML = imageObjectArray[slideIndex].src.substring(19);
+		document.querySelector("#nameS").innerHTML = ("Date: ").concat(imageObjectArray[slideIndex].src.substring(24, 30));
 	} else {
 		imgSlide.setAttribute("src", imageObjectArray[0].src);
 		imgSlide.style.rotate = imageObjectArray[0].rotate;
 		imgSlide.style.top = imageObjectArray[0].top;
 		imgSlide.style.left = imageObjectArray[0].left;
-		document.querySelector("#nameS").innerHTML = imageObjectArray[0].src.substring(19);
+		document.querySelector("#nameS").innerHTML = ("Date: ").concat(imageObjectArray[0].src.substring(24, 30));
 		slideIndex = 0;
 	}
 }
