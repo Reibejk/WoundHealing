@@ -3,23 +3,55 @@
 }
 
 body {
-	display: grid;
-	grid-template-columns: 2;
+	display: flex;
+	flex-direction: row;
 }
+
+.main {
+	display: flex;
+	max-width: 848px;
+	position: relative;
+
+}
+
+.image, .imageSlide {
+	position: relative;
+}
+
+
+.container {
+	position: relative;
+	height: 900px;
+	float: left;
+	display: flex;
+	border: 5px solid white;
+	padding: 5px;
+	background-color: black;
+	width: 50vw;
+}
+
+#containerTwo {
+	height: 900px;
+	overflow: hidden;
+	border: 5px solid white;
+	padding: 5px;
+	background-color: black;
+}
+
 
 .option {
 	margin-left: 20px;
-	display: grid;
-	grid-template-columns: 4;
 	position: absolute;
 	color: whitesmoke;
-	z-index: 2;
+	z-index: 1;
 	bottom: 20px;
+	width: 25vw;
+
 }
 
 .option > div {
 	background-color: transparent;
-	width: 80%;
+	width: 90%;
 	margin-bottom: 10px;
 	margin-left: 5px;
 }
@@ -29,9 +61,24 @@ body {
 	margin-left: 20px;
 }
 
+.directions {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+#up, #down, #left, #right {
+	width: 100%;
+}
+
+.merge {
+	display: flex;
+}
+
 
 input[type="range"] {
-	z-index: 2;
+	z-index: 1;
 	position: absolute;
 }
 
@@ -58,19 +105,7 @@ button {
 
 
 
-button:nth-child(0), button:nth-child(1) {
-	align-self: center;
-}
 
-#up, #down, #left, #right {
-	display: inline-grid;
-	align-self: center;
-}
-
-
-button:nth-child(2), button:nth-child(3) {
-
-}
 
 button:hover {
 	background: blanchedalmond;
@@ -83,38 +118,14 @@ button:hover {
 	text-shadow: 0 0 3px white;
 }
 
-.container {
-	position: relative;
-	height: 900px;
-	float: left;
+.overlay {
 	display: flex;
-	overflow: hidden;
-	border: 5px solid white;
-	padding: 5px;
-	z-index: 1;
-	background-color: black;
-}
-
-#containerTwo {
-	position: relative;
-	height: 900px;
-	float: left;
-	display: flex;
-	overflow: hidden;
-	border: 5px solid white;
-	padding: 5px;
-	z-index: 1;
-	background-color: black;
-}
-
-#imageOverLay {
 	position: absolute;
-	width: 100%;
 	transition: 1s ease;
 	opacity: 0.6;
 	bottom: 0;
-
 	visibility: hidden;
+	height: 900px;
 }
 
 p {
@@ -124,37 +135,56 @@ p {
 	text-align: center;
 	font-weight: bold;
 	font-size: 30px;
-	z-index: 2;
+	z-index: 1;
 	margin: 5px;
+}
+
+#name, #nameS {
+	margin-top: 40px;
 }
 
 #change {
 	position: absolute;
 	display: flex;
 	color: black;
-	z-index: 2;
+	z-index: 1;
 	width: 100px;
 	margin-top: 5px;
 }
-
-/*.image:hover {
-	transform: scale(1.5);
-}*/
-
-#imgSlide {
-	position: relative;
-}
-
 
 @media screen and (max-width: 640px) {
 	body {
 		display: flex;
 		flex-direction: column;
+
 	}
-	.container {
-		width: 100%;
+	.main {
+		max-width: 100vw;
 		display: flex;
 		flex-direction: column;
+	}
+
+	.container {
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 auto;
 		margin-bottom: 50px;
+	}
+
+	.overlay {
+		width: 100vw;
+		height: auto;
+		top: 0;
+		left: 0;
+	}
+
+	.option {
+		width: 100vw;
+	}
+
+	.merge {
+		flex: 0 2 auto;
+
 	}
 }
