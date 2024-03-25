@@ -3,16 +3,84 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="styles2.css">
+	<link rel="stylesheet" href="styles3.css">
 	
 </head>
 <body>
 	<div class="main">
-		<div class="container">
+		<nav class="navbar">
+			<div class="buttons">
+				<button type="button"><a href="#">Home</a></button>
+				<button type="button"><a href="#gallery">Gallery</a></button>
+				<button type="button"><a href="#container">Adjust images</a></button>
+				<button type="button"><a href="#containerTwo">Through time</a></button>
+			</div>
+		</nav>
+		<div class="container gallery" id="gallery">
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_110124.jpg" class="pic">
+				<figcaption>Date: 110124</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_180124.jpg" class="pic">
+				<figcaption>Date: 180124</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_220124.jpg" class="pic">
+				<figcaption>Date: 220124</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_250124.jpg" class="pic">
+				<figcaption>Date: 250124</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_290124.jpg" class="pic">
+				<figcaption>Date: 290124</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_050224.jpg" class="pic">
+				<figcaption>Date: 050224</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_070224.jpg" class="pic">
+				<figcaption>Date: 070224</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_150224.jpg" class="pic">
+				<figcaption>Date: 150224</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_200224.jpg" class="pic">
+				<figcaption>Date: 200224</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_260224.jpg" class="pic">
+				<figcaption>Date: 260224</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_290224.jpg" class="pic">
+				<figcaption>Date: 290224</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_040324.jpg" class="pic">
+				<figcaption>Date: 040324</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_070324.jpg" class="pic">
+				<figcaption>Date: 070324</figcaption>
+			</figure>
+			<figure>
+				<img src="./WoundRepair/P19b/P19b_110324.jpg" class="pic">
+				<figcaption>Date: 110324</figcaption>
+			</figure>
+		</div>
+		<div class="container" id="container">
 			<p>ANJ 19b</p><br>
 			<p id="name"></p>
 			<img src="./WoundRepair/P19b/P19b_110124.jpg" alt="110124" class="image" id="image">
 			<img src="./WoundRepair/P19b/P19b_110124.jpg" alt="110124" class="image overlay" id="imageOverLay">
+			<button class="" type="button" id="previous"><</button>
+			<button class="" type="button" id="next">></button>
 			<div class="option">
 				<div id="angle">
 					<label for="degree">Angle:</label>
@@ -34,12 +102,8 @@
 					<button type="button" id="down">Down</button>
 					<button type="button" id="left">Left</button>
 					<button type="button" id="right">Right</button>
-				</div>
-				<div class="directions">
 					<button class="merge" type="button" id="merge">Merge image</button>
 					<button class="merge" type="button" id="unmerge">Unmerge image</button>
-					<button class="merge" type="button" id="previous">Previous Image</button>
-					<button class="merge" type="button" id="next">Next Image</button>
 				</div>
 			</div>
 		</div>
