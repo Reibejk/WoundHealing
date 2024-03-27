@@ -37,6 +37,10 @@ let imageArray = [
 	"./WoundRepair/P19b/P19b_040324.jpg",
 	"./WoundRepair/P19b/P19b_070324.jpg",
 	"./WoundRepair/P19b/P19b_110324.jpg",
+	"./WoundRepair/P19b/P19b_140324.jpg",
+	"./WoundRepair/P19b/P19b_180324.jpg",
+	"./WoundRepair/P19b/P19b_210324.jpg",
+	"./WoundRepair/P19b/P19b_250324.jpg",
 	];
 
 let imageIndex = 0;
@@ -124,7 +128,7 @@ function rotateImage(degree) {
 let slideIndex = 0;
 let count = 0;
 
-let imageObjectArray = [
+let imageObjectArray2 = [
 	{src: "./WoundRepair/P19b/P19b_110124.jpg", rotate: "0deg", top: "19px", left: "12px", clip: "rect(0px, 100px, 0px, 100px)"},  
 	{src: "./WoundRepair/P19b/P19b_180124.jpg", rotate: "18deg", top: "7px", left: "-14px", clip: "rect(0px, 100px, 0px, 100px)"}, 
 	{src: "./WoundRepair/P19b/P19b_220124.jpg", rotate: "2deg", top: "14px", left: "5px", clip: "rect(0px, 100px, 0px, 100px)"}, 
@@ -137,17 +141,25 @@ let imageObjectArray = [
 	{src: "./WoundRepair/P19b/P19b_260224.jpg", rotate: "-176deg", top: "-56px", left: "-1px", clip: "rect(0px, 100px, 0px, 100px)"},
 	];
 
-let imageObjectArray2 = [
-	{src: "./WoundRepair/P19b/P19b_110124.jpg", rotate: "0deg", top: "-5px", left: "5px", scale: "1.02"},  
-	{src: "./WoundRepair/P19b/P19b_180124.jpg", rotate: "23deg", top: "-15px", left: "-8px", scale: "0.96"}, 
-	{src: "./WoundRepair/P19b/P19b_220124.jpg", rotate: "5deg", top: "-3px", left: "-12px", scale: "0.99"}, 
-	{src: "./WoundRepair/P19b/P19b_250124.jpg", rotate: "5deg", top: "55px", left: "31px"}, 
-	{src: "./WoundRepair/P19b/P19b_290124.jpg", rotate: "-3deg", top: "34px", left: "19px"}, 
-	{src: "./WoundRepair/P19b/P19b_050224.jpg", rotate: "13deg", top: "116px", left: "-23px"},
-	{src: "./WoundRepair/P19b/P19b_070224.jpg", rotate: "0deg", top: "66px", left: "7px"},
-	{src: "./WoundRepair/P19b/P19b_150224.jpg", rotate: "7deg", top: "101px", left: "18px"},
-	{src: "./WoundRepair/P19b/P19b_200224.jpg", rotate: "15deg", top: "94px", left: "-1px"},
-	{src: "./WoundRepair/P19b/P19b_260224.jpg", rotate: "-176deg", top: "-56px", left: "-1px"},
+let imageObjectArray = [
+	{src: "./WoundRepair/P19b/P19b_110124.jpg", rotate: "0deg", top: "0px", left: "0px", scale: "1.0"},  
+	{src: "./WoundRepair/P19b/P19b_180124.jpg", rotate: "22deg", top: "6px", left: "-24px", scale: "0.95"}, 
+	{src: "./WoundRepair/P19b/P19b_220124.jpg", rotate: "9deg", top: "-9px", left: "-24px", scale: "0.95"}, 
+	{src: "./WoundRepair/P19b/P19b_250124.jpg", rotate: "12deg", top: "33px", left: "0px", scale: "0.95"}, 
+	{src: "./WoundRepair/P19b/P19b_290124.jpg", rotate: "4deg", top: "21px", left: "-5px", scale: "0.97"}, 
+	{src: "./WoundRepair/P19b/P19b_050224.jpg", rotate: "25deg", top: "73px", left: "-65px", scale: "0.95"},
+	{src: "./WoundRepair/P19b/P19b_070224.jpg", rotate: "4deg", top: "43px", left: "-5px", scale: "0.92"},
+	{src: "./WoundRepair/P19b/P19b_150224.jpg", rotate: "12deg", top: "75px", left: "-5px", scale: "0.95"},
+	{src: "./WoundRepair/P19b/P19b_200224.jpg", rotate: "20deg", top: "62px", left: "-17px", scale: "0.95"},
+	{src: "./WoundRepair/P19b/P19b_260224.jpg", rotate: "-169deg", top: "-70px", left: "-5px", scale: "0.95"},
+	{src: "./WoundRepair/P19b/P19b_290224.jpg", rotate: "12deg", top: "98px", left: "-41px", scale: "0.95"},
+	{src: "./WoundRepair/P19b/P19b_040324.jpg", rotate: "14deg", top: "99px", left: "-39px", scale: "0.93"},
+	{src: "./WoundRepair/P19b/P19b_070324.jpg", rotate: "9deg", top: "108px", left: "-33px", scale: "0.93"},
+	{src: "./WoundRepair/P19b/P19b_110324.jpg", rotate: "14deg", top: "65px", left: "-35px", scale: "0.93"},
+	{src: "./WoundRepair/P19b/P19b_140324.jpg", rotate: "9deg", top: "107px", left: "-43px", scale: "0.93"},
+	{src: "./WoundRepair/P19b/P19b_180324.jpg", rotate: "12deg", top: "46px", left: "-5px", scale: "0.94"},
+	{src: "./WoundRepair/P19b/P19b_210324.jpg", rotate: "6deg", top: "54px", left: "-5px", scale: "0.94"},
+	{src: "./WoundRepair/P19b/P19b_250324.jpg", rotate: "4deg", top: "97px", left: "-29px", scale: "0.94"},
 	];
 
 
@@ -193,6 +205,31 @@ function enlargeImg() {
 */
 
 
+
+
+
+let animationIsOn = false;
+
+
+function startAnimation() {
+	let myInterval = 500;
+	if(animationIsOn == false) {
+		setInterval(imageSlide, myInterval);
+		animationIsOn = true;	
+	} else if (animationIsOn == true) {
+		myInterval = 2000;
+
+	}
+	
+}
+
+
+
+
+
+
+document.querySelector("#start").addEventListener("click", startAnimation);
+//document.querySelector("#stop").addEventListener("click", stopAnimation);
 
 //document.querySelector(".pic").addEventListener("click", enlargeImg);
 document.querySelector("#scale").addEventListener("change", changeScale);
