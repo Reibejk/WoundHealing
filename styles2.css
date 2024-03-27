@@ -58,14 +58,19 @@ button a {
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
+	color: black;
 }
 
 .image, .imageSlide {
 	position: relative;
-	height: auto;
-	width: 70%;
+	height: 90vh;
+	width: auto;
 	overflow: hidden;
-	/*clip: rect(100px, 100px, 100px, 100px);*/
+}
+
+.imageSlide {
+	height: 100vh;
+	width: auto;
 }
 
 #gallery {
@@ -116,6 +121,7 @@ figcaption {
 	align-items: center;
 	overflow: hidden;
 	border-radius: 40px;
+	margin-top: 20px;
 }
 
 /*#containerTwo {
@@ -235,8 +241,8 @@ button:hover {
 	
 	overflow: hidden;
 	visibility: hidden;
-	height: auto;
-	width: 80%;
+	height: 90vh;
+	width: auto;
 
 }
 
